@@ -5,7 +5,7 @@ const output = document.getElementById('output');
 function validateInput() {
     const value = inputNumber.value;
 
-    if (value === '') {
+    if (value === '' || value === ' ') {
         output.innerText = 'Please enter a valid number!'
     } else if (value <= 0) {
         output.innerText = 'Please enter a number greater than or equal to 1.'
@@ -13,7 +13,7 @@ function validateInput() {
         output.innerText = 'Please enter a number less than or equal to 3999.'
     } else {
         const romanNumeral = convertToRoman(value);
-        output.innerHTML = `The Roman numeral for <b>${value}</b> is:<br><br><i>${romanNumeral}</i>`;
+        output.innerHTML = `The Roman numeral for <b>${value}</b> is:<br><br><b>${romanNumeral}</b>`;
         inputNumber.value = '';
     }
 };
